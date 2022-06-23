@@ -52,6 +52,12 @@
 #ifndef TINY_GLTF_H_
 #define TINY_GLTF_H_
 
+// The following define is a hack for symbol conflicts between iosapp and Wonka.
+// In iosapp, cardgen is using an old version of tinygltf, so we were getting symbol
+// conflicts between Wonka static xcframework and iosapp's cardgen. The long term plan 
+// is to remove tinygltf completely from Wonka. 
+#define tinygltf tinygltf_hack
+
 #include <array>
 #include <cassert>
 #include <cmath>  // std::fabs
